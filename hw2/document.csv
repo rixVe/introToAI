@@ -1,0 +1,7 @@
+Type,Doc,Content,Class
+training,D1,"T1 T2",A
+training,D2,"T3 T3",A
+training,D3,"T1 T3",A
+training,D4,"T1 T2 T2",B
+training,D5,"T1",B
+test,D6,"T1 T3 T3",?
