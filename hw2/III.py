@@ -36,7 +36,7 @@ print('P(B) = ', 1 - 3/5)
 print('P(T3|B) = ', end='')
 
 bt3 = sum([bow.at['D' + str(x), 'T3'] if bow.at['D' + str(x), 'Class']=='B' else 0 for x in range(1,6)])
-pool = sum([bow.iat[x, y] for x in range(5) for y in range(3)])
+pool = sum([bow.iat[x, y] if bow.at['D' + str(x+1), 'Class'] == 'B' else 0 for x in range(5) for y in range(3)])
 print((bt3+1)/(pool + dicts))
 
 print('P(B|D6) = ', (1-3/5) * 3/7 * ((bt3+1)/(pool + dicts)) ** bow.at['D6', 'T3'])
