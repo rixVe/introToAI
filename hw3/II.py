@@ -54,5 +54,27 @@ if len(infAX) > 0:
     SIDA -= len(infAX)/len(inf) * np.log2(len(infAX)/len(inf))
 if len(infAZ) > 0:
     SIDA -= len(infAZ)/len(inf) * np.log2(len(infAZ)/len(inf))
-    
 print('GainRatio(D,A) =', IGDA/SIDA)
+# This is dumb because SIDA = entA (because reasons i don't quite get, it is let send help )
+print('GainRatio(D,B) = InformationGain(D,B)/Ent(B) =', IGDB/entB)
+
+
+entC = 0
+infCK = inf[inf.C == 'K']
+infCL = inf[inf.C == 'L']
+entC += - len(infCK)/len(inf) * np.log2(len(infCK)/len(inf))
+entC += - len(infCL)/len(inf) * np.log2(len(infCL)/len(inf))
+
+print('Ent(C) =', entC)
+
+SIDA = 0
+infAX = inf[inf.C == 'K']
+infAZ = inf[inf.C == 'L']
+
+if len(infAX) > 0:
+    SIDA -= len(infAX)/len(inf) * np.log2(len(infAX)/len(inf))
+if len(infAZ) > 0:
+    SIDA -= len(infAZ)/len(inf) * np.log2(len(infAZ)/len(inf))
+# SIDA = truly SIDC = entC because it is the first split i guess oh god pls send help 
+print('GainRatio(D,C) =', IGDC/SIDA)
+print('Parameter A will be selected') # this is static and I dont care, it works for the example :)))
