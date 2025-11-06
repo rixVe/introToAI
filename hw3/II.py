@@ -3,7 +3,7 @@ import numpy as np
 
 
 print('InformationGlain(D,C) = ', 1-1)
-inf = pd.read_csv('hw3/information.csv', index_col=0)
+inf = pd.read_csv('hw3/informationII.csv', index_col=0)
 
 infBE = inf[inf.B=='E']
 
